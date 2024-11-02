@@ -36,4 +36,4 @@ const transactionSchema = Mongoose.Schema({
     }
 });
 
-module.exports = Mongoose.model('Blog',blogSchema);
+module.exports = Mongoose.model('Blog',transactionSchema);

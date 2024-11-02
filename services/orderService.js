@@ -13,4 +13,14 @@ OrderService.getOrderById = async (id)=>{
     }
 }
 
+OrderService.getOrdersByCustomerId = async (id)=>{
+    try{
+        return;
+    }
+    catch(err){
+        console.log(err);
+        throw err;
+    }
+}
+
 module.exports = OrderService;

@@ -42,4 +42,17 @@ CustomerService.createCustomer = async (req)=>{
     }
 }
 
+CustomerService.updateCustomer = async (req,customer)=>{
+    try{
+        const {name,age,address} = req;
+        customer.name = name, customer.age =age, customer.address = address;
+        const response = Customer.findOneAndUpdate({_id:customer._id,customer});
+        return response;
+    }
+    catch(err){
+        console.log(err);
+        throw err;
+    }
+}
+
 module.exports = CustomerService;
