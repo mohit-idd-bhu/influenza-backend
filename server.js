@@ -1,14 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./db/dbConfig')
-const customerRoutes = require('./routes/customerRoutes')
+const customerController = require('./routes/customerController')
 const bodyparser = require('body-parser');
 
 const app = express();
 
 app.use(cors());
 app.use(bodyparser.urlencoded({extended:true}));
-app.use('/customer',customerRoutes);
+app.use('/customer',customerController);
 
 
 const PORT = process.env.PORT||3000;

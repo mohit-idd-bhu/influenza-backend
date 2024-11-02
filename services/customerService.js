@@ -1,7 +1,7 @@
 const Customer = require('../models/customer');
 const CustomerService={};
 
-CustomerService.getCustomers = async ()=>{
+CustomerService.getAllCustomers = async ()=>{
     try{
         const customerList = await Customer.find({});
         return customerList;
@@ -12,7 +12,18 @@ CustomerService.getCustomers = async ()=>{
     }
 }
 
-CustomerService.addCustomer = async (req)=>{
+CustomerService.getCustomerById = async (id)=>{
+    try{
+        const customer = await Customer.findOne({_id:id});
+        return customer;
+    }
+    catch(err){
+        console.log(err);
+        throw err;
+    }
+}
+
+CustomerService.createCustomer = async (req)=>{
     try{
         const {userName,name,email,age,address}=req;
         const customer = {
