@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./db/dbConfig')
 const customerController = require('./routes/customerController')
+const orderController = require('./routes/orderController');
 const bodyparser = require('body-parser');
 
 const app = express();
@@ -9,6 +10,7 @@ const app = express();
 app.use(cors());
 app.use(bodyparser.urlencoded({extended:true}));
 app.use('/customer',customerController);
+app.use('/order',orderController);
 
 
 const PORT = process.env.PORT||3000;
