@@ -12,8 +12,6 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use('/customer',customerController);
 app.use('/order',orderController);
 
-//Test commit
-
 
 const PORT = process.env.PORT||3000;
 
